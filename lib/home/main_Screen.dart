@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Onboard_Screen extends StatelessWidget {
-  const Onboard_Screen({super.key});
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Onboarding screen'),
+        title: const Text("Main Screen"),
       ),
     );
   }

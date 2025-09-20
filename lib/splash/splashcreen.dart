@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/OnBordingScreen/onboarding.dart';
+import 'package:flutter_application_1/auth/sign_in.dart';
+import 'package:flutter_application_1/home/main_Screen.dart';
+import 'package:flutter_application_1/splash/auth_cont.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class Splash_Screen extends StatelessWidget {
-  const Splash_Screen({super.key});
+  Splash_Screen({super.key});
+  final AuthController authController = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(const Duration(microseconds: 25000), () {
+      if (authController.isFirstTime) {
+        Get.off(() => const Onboard_Screen());
+      } else if (authController.isLoggedIn) {
+        Get.off(() => MainScreen());
+      } else {
+        Get.off(() => SignInscreen());
+      }
+    });
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -53,7 +69,7 @@ class Splash_Screen extends StatelessWidget {
                           child: Icon(
                             Icons.shopping_bag_outlined,
                             size: 48,
-                            color: Colors.black,
+                            color: Theme.of(context).primaryColor,
                           ),
                         ),
                       );
@@ -129,6 +145,7 @@ class Splash_Screen extends StatelessWidget {
 
 class GridPattern extends StatelessWidget {
   final Color color;
+
   const GridPattern({Key? key, required this.color}) : super(key: key);
 
   @override
