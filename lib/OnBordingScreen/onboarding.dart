@@ -27,7 +27,7 @@ class _Onboard_ScreenState extends State<Onboard_Screen> {
   void _handleGetsStated() {
     final AuthController authController = Get.find<AuthController>();
     authController.setfirstTimeDone();
-    Get.off(const SignInscreen());
+    Get.off(SignInscreen());
   }
 
   @override
