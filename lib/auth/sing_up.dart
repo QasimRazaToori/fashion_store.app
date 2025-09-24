@@ -55,93 +55,108 @@ class SingUpScreen extends StatelessWidget {
             const SizedBox(
               height: 40,
             ),
-            CustumtextField(
-              lebel: "Full Name",
-              prefixIcon: Icons.person_outline,
-              keyboardType: TextInputType.name,
-              controller: _nameController,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your Name';
-                } else {
-                  return null;
-                }
-              },
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustumtextField(
+                lebel: "Full Name",
+                prefixIcon: Icons.person_outline,
+                keyboardType: TextInputType.name,
+                controller: _nameController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your Name';
+                  } else {
+                    return null;
+                  }
+                },
+              ),
             ),
             const SizedBox(
               height: 16,
             ),
-            CustumtextField(
-              lebel: "Email",
-              prefixIcon: Icons.email_outlined,
-              keyboardType: TextInputType.emailAddress,
-              controller: _EmailController,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your Email';
-                }
-                if (!GetUtils.isEmail(value)) {
-                  return "Please enter the valid email";
-                } else {
-                  return null;
-                }
-              },
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustumtextField(
+                lebel: "Email",
+                prefixIcon: Icons.email_outlined,
+                keyboardType: TextInputType.emailAddress,
+                controller: _EmailController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your Email';
+                  }
+                  if (!GetUtils.isEmail(value)) {
+                    return "Please enter the valid email";
+                  } else {
+                    return null;
+                  }
+                },
+              ),
             ),
             const SizedBox(
               height: 16,
             ),
-            CustumtextField(
-              lebel: "Password",
-              prefixIcon: Icons.lock_outline,
-              keyboardType: TextInputType.visiblePassword,
-              isPassword: true,
-              controller: _PasswordController,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your Name';
-                } else {
-                  return null;
-                }
-              },
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustumtextField(
+                lebel: "Password",
+                prefixIcon: Icons.lock_outline,
+                keyboardType: TextInputType.visiblePassword,
+                isPassword: true,
+                controller: _PasswordController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your Name';
+                  } else {
+                    return null;
+                  }
+                },
+              ),
             ),
             const SizedBox(
               height: 16,
             ),
-            CustumtextField(
-              lebel: "Confirm Password",
-              prefixIcon: Icons.lock_outline,
-              keyboardType: TextInputType.visiblePassword,
-              isPassword: true,
-              controller: _confirmPasswordController,
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'Please confirm your Name';
-                }
-                if (value != _PasswordController.text) {
-                  return "Passwords do not match";
-                } else {
-                  return null;
-                }
-              },
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CustumtextField(
+                lebel: "Confirm Password",
+                prefixIcon: Icons.lock_outline,
+                keyboardType: TextInputType.visiblePassword,
+                isPassword: true,
+                controller: _confirmPasswordController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please confirm your Name';
+                  }
+                  if (value != _PasswordController.text) {
+                    return "Passwords do not match";
+                  } else {
+                    return null;
+                  }
+                },
+              ),
             ),
             SizedBox(
               height: 24,
             ),
             SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Theme.of(context).primaryColor),
-                  onPressed: () => Get.off(() => MainScreen()),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 16,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Theme.of(context).primaryColor),
+                    onPressed: () => Get.off(() => MainScreen()),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 16,
+                      ),
+                      child: Text("Sign Up",
+                          style: AppTextStyle.withColor(
+                            AppTextStyle.ButtonMedium,
+                            Colors.white,
+                          )),
                     ),
-                    child: Text("Sign Up",
-                        style: AppTextStyle.withColor(
-                          AppTextStyle.ButtonMedium,
-                          Colors.white,
-                        )),
                   ),
                 )),
             SizedBox(

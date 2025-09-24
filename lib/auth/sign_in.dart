@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Utiles/app_textstyle.dart';
 import 'package:flutter_application_1/auth/custum_textfield.dart';
+import 'package:flutter_application_1/auth/forgot_pass.dart';
 import 'package:flutter_application_1/auth/sing_up.dart';
-import 'package:flutter_application_1/home/main_Screen.dart';
+
 import 'package:flutter_application_1/splash/auth_cont.dart';
 import 'package:get/get.dart';
 import 'package:get/utils.dart';
@@ -144,5 +145,5 @@ class SignInscreen extends StatelessWidget {
 void _handleSignIn() {
   final AuthController authController = Get.find<AuthController>();
   authController.login();
-  Get.offAll(() => const MainScreen());
+  Get.offAll(() => const ForgetPasswordScreen());
 }
