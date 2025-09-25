@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class WishlistScreen extends StatelessWidget {
-  const WishlistScreen({super.key});
+class ShopingScreen extends StatelessWidget {
+  const ShopingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('WishList Screen'),
+        title: Text('Shopping Screen'),
       ),
     );
   }
