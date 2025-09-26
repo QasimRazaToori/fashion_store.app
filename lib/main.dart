@@ -11,6 +11,7 @@ import 'package:get_storage/get_storage.dart';
 void main() async {
   await GetStorage.init();
   Get.put(ThemeController());
+  Get.put(AuthController());
 
   Get.put(NavigationController());
   runApp(const myApp());
