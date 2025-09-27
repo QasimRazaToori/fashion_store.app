@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/home/Search_filter_screen.dart';
+import 'package:flutter_application_1/home/category_Screen.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -39,7 +41,9 @@ class Homescreen extends StatelessWidget {
               ],
             ),
           ),
-          const CustumSearchBar(),
+          CustumSearchBar(),
+          //category chips
+          CategoryChips(),
         ],
       )),
     );
