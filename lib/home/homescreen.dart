@@ -1,5 +1,25 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show
+        AssetImage,
+        BuildContext,
+        CircleAvatar,
+        Colors,
+        Column,
+        CrossAxisAlignment,
+        EdgeInsets,
+        FontWeight,
+        Padding,
+        Row,
+        SafeArea,
+        Scaffold,
+        SizedBox,
+        StatelessWidget,
+        Text,
+        TextStyle,
+        Theme,
+        Widget;
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter_application_1/home/Sale_banner.dart';
 import 'package:flutter_application_1/home/Search_filter_screen.dart';
 import 'package:flutter_application_1/home/category_Screen.dart';
 
@@ -10,41 +30,48 @@ class Homescreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: const SafeArea(
-          child: Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(16),
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 20,
-                  backgroundImage: AssetImage('assets/images/avatar.jpg'),
-                ),
-                SizedBox(
-                  width: 12,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+      body: SafeArea(
+          child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Container(
+          child: const Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.all(16),
+                child: Row(
                   children: [
-                    Text(
-                      'Hello Alex',
-                      style: TextStyle(color: Colors.grey, fontSize: 14),
+                    CircleAvatar(
+                      radius: 20,
+                      backgroundImage: AssetImage('assets/images/avatar.jpg'),
                     ),
-                    Text(
-                      'Good Morning',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                    )
+                    SizedBox(
+                      width: 12,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Hello Alex',
+                          style: TextStyle(color: Colors.grey, fontSize: 14),
+                        ),
+                        Text(
+                          'Good Morning',
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
                   ],
                 ),
-              ],
-            ),
+              ),
+              CustumSearchBar(),
+              //category chips
+              CategoryChips(),
+              //SaleBanner
+              SaleBannerr(),
+            ],
           ),
-          CustumSearchBar(),
-          //category chips
-          CategoryChips(),
-        ],
+        ),
       )),
     );
   }
