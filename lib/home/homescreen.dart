@@ -19,9 +19,11 @@ import 'package:flutter/material.dart'
         Theme,
         Widget;
 import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/home/Sale_banner.dart';
 import 'package:flutter_application_1/home/Search_filter_screen.dart';
 import 'package:flutter_application_1/home/category_Screen.dart';
+import 'package:flutter_application_1/home/product_grid.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -34,9 +36,9 @@ class Homescreen extends StatelessWidget {
           child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Container(
-          child: const Column(
+          child: Column(
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(16),
                 child: Row(
                   children: [
@@ -64,11 +66,37 @@ class Homescreen extends StatelessWidget {
                   ],
                 ),
               ),
-              CustumSearchBar(),
+              const CustumSearchBar(),
               //category chips
-              CategoryChips(),
+              const CategoryChips(),
               //SaleBanner
-              SaleBannerr(),
+              const SaleBannerr(),
+              //popular product
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Popular Product',
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        'See All',
+                        style: TextStyle(color: Theme.of(context).primaryColor),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              //productGrid
+              const Expanded(
+                child: productGrid(),
+              )
             ],
           ),
         ),
