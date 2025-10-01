@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/home/product_car.dart';
 import 'package:flutter_application_1/model/product.dart';
 
 class productGrid extends StatelessWidget {
@@ -18,7 +19,7 @@ class productGrid extends StatelessWidget {
         final Product = products[index];
         return GestureDetector(
           onTap: () {},
-          child: ProductCard(Product: Product),
+          child: ProductCard(product: Product),
         );
       },
     );
