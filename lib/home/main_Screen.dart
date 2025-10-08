@@ -24,11 +24,11 @@ class MainScreen extends StatelessWidget {
                 child: Obx(() => IndexedStack(
                       key: ValueKey(navigationController.currentIndex.value),
                       index: navigationController.currentIndex.value,
-                      children: const [
-                        Homescreen(),
-                        ShopingScreen(),
-                        WishlistScreen(),
-                        Acountscreen(),
+                      children: [
+                        const Homescreen(),
+                        const ShopingScreen(),
+                        WishlistApp(),
+                        const Acountscreen(),
                       ],
                     )),
               ),

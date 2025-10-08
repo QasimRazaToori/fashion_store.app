@@ -1,8 +1,8 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Utiles/app_textstyle.dart';
+import 'package:flutter_application_1/home/sizeSelector.dart';
 import 'package:flutter_application_1/model/product.dart';
+import 'package:get/get.dart';
 import 'package:share_plus/share_plus.dart';
 
 class ProductDetailScreen extends StatelessWidget {
@@ -47,6 +47,7 @@ class ProductDetailScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
@@ -59,8 +60,65 @@ class ProductDetailScreen extends StatelessWidget {
                   ),
                 ),
                 ////favorate button
+                Positioned(
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          product.isFav
+                              ? Icons.favorite
+                              : Icons.favorite_border,
+                          color: product.isFav
+                              ? Theme.of(context).primaryColor
+                              : (isDark ? Colors.white : Colors.black),
+                        )))
               ],
             ),
+            //product details
+            Padding(
+              padding: EdgeInsets.all(screenWeight * 0.04),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text(product.name,
+                            style: AppTextStyle.withColor(
+                              AppTextStyle.h2,
+                              Theme.of(context)
+                                  .textTheme
+                                  .headlineMedium!
+                                  .color!,
+                            )),
+                      ),
+                      Text('\$${product.price.toStringAsFixed(2)}',
+                          style: AppTextStyle.withColor(
+                            AppTextStyle.h2,
+                            Theme.of(context).textTheme.headlineMedium!.color!,
+                          )),
+                      Text(product.category,
+                          style: AppTextStyle.withColor(
+                              AppTextStyle.BodyMeddium,
+                              isDark ? Colors.grey[400]! : Colors.grey[600]!)),
+                      SizedBox(
+                        height: screenWeight * 0.02,
+                      ),
+                      Text('Select Size',
+                          style: AppTextStyle.withColor(
+                            AppTextStyle.LebelMedium,
+                            Theme.of(context).textTheme.bodyLarge!.color!,
+                          )),
+                      SizedBox(
+                        height: screenWeight * 0.01,
+                      ),
+                      //size selector
+                      const Sizeselector(),
+                    ],
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
