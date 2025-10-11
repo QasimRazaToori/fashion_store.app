@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Profile/acountScreen.dart';
+import 'package:flutter_application_1/Profile/notifications_screen.dart';
 import 'package:flutter_application_1/Utiles/custum_bottom_nav.dart';
 import 'package:flutter_application_1/controller/Navigation_controller.dart';
 import 'package:flutter_application_1/controller/theme_controller.dart';
@@ -24,11 +25,11 @@ class MainScreen extends StatelessWidget {
                 child: Obx(() => IndexedStack(
                       key: ValueKey(navigationController.currentIndex.value),
                       index: navigationController.currentIndex.value,
-                      children: [
-                        const Homescreen(),
-                        const ShopingScreen(),
-                        WishlistApp(),
-                        const Acountscreen(),
+                      children: const [
+                        Homescreen(),
+                        Shopingscree(),
+                        WishlistScreen(),
+                        Acountscreen(),
                       ],
                     )),
               ),
