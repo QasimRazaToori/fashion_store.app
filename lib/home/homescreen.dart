@@ -22,8 +22,11 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/home/Sale_banner.dart';
 import 'package:flutter_application_1/home/Search_filter_screen.dart';
+import 'package:flutter_application_1/home/allProductScreen.dart';
 import 'package:flutter_application_1/home/category_Screen.dart';
 import 'package:flutter_application_1/home/product_grid.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -84,7 +87,7 @@ class Homescreen extends StatelessWidget {
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () => Get.to(() => Allproductscreen()),
                       child: Text(
                         'See All',
                         style: TextStyle(color: Theme.of(context).primaryColor),
