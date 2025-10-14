@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Utiles/app_textstyle.dart';
 import 'package:flutter_application_1/home/filter_bottom.dart';
+import 'package:flutter_application_1/home/product_grid.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
@@ -42,6 +43,7 @@ class Allproductscreen extends StatelessWidget {
           ),
         ],
       ),
+      body: const productGrid(),
     );
   }
 }
